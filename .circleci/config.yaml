@@ -1,0 +1,14 @@
+version: 2.1
+
+workflows:
+  test-java-app:
+    jobs:
+      - test
+
+jobs:
+  test:
+    docker:
+      - image: cimg/openjdk:17.0.2
+    steps:
+      - checkout
+      - run: java --version  
